@@ -1,7 +1,12 @@
 package com.qa.quickstart.accountProject;
 
+
 import java.util.HashMap;
 import java.util.Map;
+
+
+
+import com.google.gson.Gson;
 
 public class serviceClass {
 	private Map<Integer,accountClass> accountClassMap;
@@ -9,7 +14,9 @@ public class serviceClass {
 	
 	public serviceClass() {
 		accountClassMap = new HashMap<Integer, accountClass>();
+				
 		
+				
 	}
 	
 	public void addaccountClasstoMap(accountClass accountClasstoadd) {
@@ -17,7 +24,10 @@ public class serviceClass {
 		counter++;
 	}
 	
-	public void gettingAccount(accountClass accountClassToGet) {
-		accountClassMap.get(counter);		
+	public accountClass gettingAccount(int key) {
+		return accountClassMap.get(key);		
+	}
+	public Map<Integer, accountClass> gettingaccountClassMap() {
+		return accountClassMap;		
 	}
 }
